@@ -3,7 +3,7 @@ package br.com.alura.livraria.factory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import br.com.alura.livraria.dao.GestaoDao;
+import br.com.alura.livraria.dao.AutorDao;
 
 public class ConnectionFactory {
 

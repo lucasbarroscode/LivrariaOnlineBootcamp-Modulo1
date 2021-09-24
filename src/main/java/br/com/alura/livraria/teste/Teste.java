@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-import br.com.alura.livraria.dao.GestaoDao;
-import br.com.alura.livraria.modelo.Gestao;
+import br.com.alura.livraria.dao.AutorDao;
+import br.com.alura.livraria.modelo.Autor;
 
 public class Teste {
 
@@ -21,9 +21,9 @@ public class Teste {
 			
 			Connection conexao = DriverManager.getConnection(url, usuario, senha);
 			
-			GestaoDao dao = new GestaoDao(conexao);
+			AutorDao dao = new AutorDao(conexao);
 			
-			Gestao gestao = new Gestao("AAA", "email", LocalDate.now(), "eeee");
+			Autor gestao = new Autor("AAA", "email", LocalDate.now(), "eeee");
 			
 			dao.cadastrar(gestao);
 			

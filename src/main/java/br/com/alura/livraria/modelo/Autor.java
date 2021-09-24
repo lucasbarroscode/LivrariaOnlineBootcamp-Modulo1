@@ -2,32 +2,30 @@ package br.com.alura.livraria.modelo;
 
 import java.time.LocalDate;
 
-public class Gestao {
+public class Autor {
 
 	private String nome;
 	private String email;
 	private LocalDate data;
-	private String mini_cv;
+	private String miniCV;
 	
 	
-	public Gestao() {
+	public Autor() {
 		
 	}
 	
-	public Gestao(String nome, String email, LocalDate data, String mini_cv) {
+	public Autor(String nome, String email, LocalDate data, String miniCV) {
 		super();
 		this.nome = nome;
 		this.email = email;
 		this.data = data;
-		this.mini_cv = mini_cv;
+		this.miniCV = miniCV;
 	}
 	
 
-
-
 	@Override
 	public String toString() {
-		return "Gestao [nome=" + nome + ", email=" + email + ", data=" + data + ", mini_cv=" + mini_cv + "]";
+		return "Autor [nome=" + nome + ", email=" + email + ", data=" + data + ", miniCV=" + miniCV + "]";
 	}
 
 	public String getNome() {
@@ -48,12 +46,14 @@ public class Gestao {
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
-	public String getMini_cv() {
-		return mini_cv;
+	public String getMiniCV() {
+		return miniCV;
 	}
-	public void setMini_cv(String mini_cv) {
-		this.mini_cv = mini_cv;
+
+	public void setMiniCV(String miniCV) {
+		this.miniCV = miniCV;
 	}
+
 
 	
 	

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 
-import br.com.alura.livraria.modelo.Gestao;
+import br.com.alura.livraria.modelo.Autor;
 
 public class TesteSelectGestão {
 	
@@ -32,12 +32,12 @@ public class TesteSelectGestão {
 		
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
-			Gestao g = new Gestao();
+			Autor g = new Autor();
 			
 			g.setNome(rs.getString("nome"));
 			g.setEmail(rs.getString("email"));
 			g.setData(rs.getDate("data").toLocalDate());
-			g.setMini_cv(rs.getString("miniCV"));
+			g.setMiniCV(rs.getString("miniCV"));
 			
 			System.out.println(g);
 			

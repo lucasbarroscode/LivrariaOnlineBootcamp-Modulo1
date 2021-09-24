@@ -12,18 +12,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.alura.livraria.dao.GestaoDao;
+import br.com.alura.livraria.dao.AutorDao;
 import br.com.alura.livraria.factory.ConnectionFactory;
-import br.com.alura.livraria.modelo.Gestao;
+import br.com.alura.livraria.modelo.Autor;
 
 @WebServlet("/autores")
 public class AutoresServlet extends HttpServlet {
 
-	private GestaoDao dao;
+	private AutorDao dao;
 
 	public AutoresServlet() {
 
-			this.dao = new GestaoDao(new ConnectionFactory().getConnection());
+			this.dao = new AutorDao(new ConnectionFactory().getConnection());
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class AutoresServlet extends HttpServlet {
 		LocalDate data = LocalDate.parse(req.getParameter("data"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		String miniCV = req.getParameter("cv");
 
-		Gestao gestao = new Gestao(nome, email, data, miniCV);
+		Autor gestao = new Autor(nome, email, data, miniCV);
 
 		dao.cadastrar(gestao);
 

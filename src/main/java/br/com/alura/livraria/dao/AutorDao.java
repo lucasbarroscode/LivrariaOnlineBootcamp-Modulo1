@@ -10,17 +10,17 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.alura.livraria.modelo.Gestao;
+import br.com.alura.livraria.modelo.Autor;
 
-public class GestaoDao {
+public class AutorDao {
 
 	private Connection conexao;
 
-	public GestaoDao(Connection conexao) {
+	public AutorDao(Connection conexao) {
 		this.conexao = conexao;
 	}
 
-	public void cadastrar(Gestao gestao) {
+	public void cadastrar(Autor gestao) {
 
 		try {
 
@@ -30,7 +30,7 @@ public class GestaoDao {
 			ps.setString(1, gestao.getNome());
 			ps.setString(2, gestao.getEmail());
 			ps.setDate(3, Date.valueOf(gestao.getData()));
-			ps.setString(4, gestao.getMini_cv());
+			ps.setString(4, gestao.getMiniCV());
 
 			ps.execute();
 
@@ -41,7 +41,7 @@ public class GestaoDao {
 		}
 	}
 
-	public List<Gestao> listar() {
+	public List<Autor> listar() {
 
 		try {
 
@@ -51,15 +51,15 @@ public class GestaoDao {
 
 			ResultSet rs = ps.executeQuery();
 
-			List<Gestao> gestao = new ArrayList<>();
+			List<Autor> gestao = new ArrayList<>();
 
 			while (rs.next()) {
-				Gestao g = new Gestao();
+				Autor g = new Autor();
 
 				g.setNome(rs.getString("nome"));
 				g.setEmail(rs.getString("email"));
 				g.setData(rs.getDate("data").toLocalDate());
-				g.setMini_cv(rs.getString("miniCV"));
+				g.setMiniCV(rs.getString("miniCV"));
 
 				gestao.add(g);
 

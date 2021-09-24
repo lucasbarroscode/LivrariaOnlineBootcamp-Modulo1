@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 
-import br.com.alura.livraria.modelo.Gestao;
+import br.com.alura.livraria.modelo.Autor;
 
 public class TesteInsereGestão {
 	
@@ -22,7 +22,7 @@ public class TesteInsereGestão {
 		
 		Connection conexao = DriverManager.getConnection(url, usuario, senha);
 		
-		Gestao g = new Gestao("Lucas",
+		Autor g = new Autor("Lucas",
 				"lucasemail",
 				LocalDate.now(),
 				"aaaaaa");
@@ -33,7 +33,7 @@ public class TesteInsereGestão {
 		ps.setString(1, g.getNome());
 		ps.setString(2, g.getEmail());
 		ps.setDate(3, Date.valueOf(g.getData()));
-		ps.setString(4, g.getMini_cv());
+		ps.setString(4, g.getMiniCV());
 		
 		ps.execute();
 		
